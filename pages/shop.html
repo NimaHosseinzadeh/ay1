@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>فروشگاه | Aynim</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/images/aynim-high-resolution-logo.png">
+  <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
+  <!-- Remix Icon -->
+  <link rel="stylesheet" href="../assets/icons/remixicon/remixicon.css">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/shop.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__top">
+      <a href="../index.html" class="header__logo"><img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim"></a>
+
+      <form class="search" role="search">
+        <input class="search__input" type="search" placeholder="جستجوی محصولات">
+        <button class="search__btn" aria-label="جستجو"><img src="../assets/icons/search.svg" alt=""></button>
+      </form>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z"/></svg>
+        </button>
+        <a href="#" class="btn btn--primary btn--sm"><img src="../assets/icons/account.svg" alt="">ورود / ثبت نام</a>
+        <a href="#" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۱</span></a>
+      </div>
+    </div>
+
+    <nav class="container nav">
+      <a href="#" class="btn btn--primary">دسته بندی محصولات</a>
+      <ul class="nav__list">
+        <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="">صفحه اصلی</a></li>
+        <li><a href="shop.html" class="is-active"><img src="../assets/icons/shop.svg" alt="">فروشگاه</a></li>
+        <li><a href="#"><img src="../assets/icons/blog.svg" alt="">بلاگ</a></li>
+        <li><a href="#"><img src="../assets/icons/message-chat.svg" alt="">سوالات متداول</a></li>
+      </ul>
+      <a href="#" class="btn btn--dark btn--sm"><img src="../assets/icons/notification.svg" alt="">همکاری در فروش</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="مسیر صفحه">
+      <ol>
+        <li><a href="../index.html">خانه</a></li>
+        <li aria-current="page">فروشگاه</li>
+      </ol>
+    </nav>
+
+    <div class="page-head">
+      <h1 class="page-head__title">فروشگاه</h1>
+      <p class="page-head__count">۶ محصول از ۱۲۸ محصول</p>
+    </div>
+
+    <div class="shop">
+
+      <!-- Filters -->
+      <aside class="filter" aria-label="فیلتر محصولات">
+        <form>
+          <details class="filter__group" open>
+            <summary>دسته بندی</summary>
+            <ul class="filter__list">
+              <li><label><input type="checkbox"> لباس زنانه</label></li>
+              <li><label><input type="checkbox"> لباس مردانه</label></li>
+              <li><label><input type="checkbox"> لباس بچه‌گانه</label></li>
+              <li><label><input type="checkbox"> فروش ویژه</label></li>
+            </ul>
+          </details>
+
+          <details class="filter__group" open>
+            <summary>محدوده قیمت (تومان)</summary>
+            <div class="filter__price">
+              <input type="number" placeholder="از" min="0" aria-label="حداقل قیمت">
+              <input type="number" placeholder="تا" min="0" aria-label="حداکثر قیمت">
+            </div>
+          </details>
+
+          <details class="filter__group" open>
+            <summary>رنگ</summary>
+            <div class="swatches">
+              <label><input type="checkbox" aria-label="مشکی"><span style="background:#222"></span></label>
+              <label><input type="checkbox" aria-label="آبی"><span style="background:#3d6bd1"></span></label>
+              <label><input type="checkbox" aria-label="قرمز"><span style="background:#b0323c"></span></label>
+              <label><input type="checkbox" aria-label="سبز"><span style="background:#5cb88a"></span></label>
+              <label><input type="checkbox" aria-label="صورتی"><span style="background:#c47fb0"></span></label>
+              <label><input type="checkbox" aria-label="کرم"><span style="background:#e8a35c"></span></label>
+            </div>
+          </details>
+
+          <details class="filter__group" open>
+            <summary>سایز</summary>
+            <div class="sizes">
+              <label><input type="checkbox"><span>S</span></label>
+              <label><input type="checkbox"><span>M</span></label>
+              <label><input type="checkbox"><span>L</span></label>
+              <label><input type="checkbox"><span>XL</span></label>
+              <label><input type="checkbox"><span>XXL</span></label>
+            </div>
+          </details>
+
+          <button class="btn btn--primary filter__submit">اعمال فیلتر</button>
+        </form>
+      </aside>
+
+      <!-- Products -->
+      <section class="catalog">
+        <div class="toolbar">
+          <span class="toolbar__label">مرتب‌سازی:</span>
+          <ul class="toolbar__sort">
+            <li><a href="#" class="is-active">جدیدترین</a></li>
+            <li><a href="#">پربازدیدترین</a></li>
+            <li><a href="#">ارزان‌ترین</a></li>
+            <li><a href="#">گران‌ترین</a></li>
+          </ul>
+        </div>
+
+        <div class="products">
+          <article class="card">
+            <span class="card__badge">جدید</span>
+            <img class="card__img" src="../assets/images/014.jpg" alt="">
+            <h3 class="card__title">تی شرت دو رو چاپ مردانه مدل ۰۳۷</h3>
+            <p class="card__price">۸۶۸,۰۰۰ تومان</p>
+          </article>
+          <article class="card">
+            <span class="card__badge">جدید</span>
+            <img class="card__img" src="../assets/images/013.jpg" alt="">
+            <h3 class="card__title">شمیز زنانه درسا مدل ۰۸۵۱</h3>
+            <del class="card__old">۷۲۰,۰۰۰</del>
+            <p class="card__price">۵۹۷,۰۰۰ تومان</p>
+          </article>
+          <article class="card">
+            <span class="card__badge">جدید</span>
+            <img class="card__img" src="../assets/images/012.jpg" alt="">
+            <h3 class="card__title">تی شرت آستین کوتاه یقه گرد مردانه مدل ۰۳۹</h3>
+            <p class="card__price">۸۸۷,۰۰۰ تومان</p>
+          </article>
+          <article class="card">
+            <span class="card__badge">تخفیف</span>
+            <img class="card__img" src="../assets/images/018.jpg" alt="">
+            <h3 class="card__title">سوییشرت پنبه ای دورس مردانه مدل ۰۷۶۸</h3>
+            <p class="card__price">۹۶۸,۰۰۰ تومان</p>
+            <div class="colors"><i style="background:#4a5568"></i><i style="background:#e8a35c"></i><i style="background:#2ecc40"></i></div>
+          </article>
+          <article class="card">
+            <span class="card__badge">تخفیف</span>
+            <img class="card__img" src="../assets/images/017.jpg" alt="">
+            <h3 class="card__title">سارافون مجلسی دخترانه</h3>
+            <del class="card__old">۲,۸۰۰,۰۰۰</del>
+            <p class="card__price">۱,۶۰۲,۰۰۰ تومان</p>
+            <div class="colors"><i style="background:#5cb88a"></i><i style="background:#8a6b6b"></i><i style="background:#ddd"></i></div>
+          </article>
+          <article class="card">
+            <span class="card__badge">تخفیف</span>
+            <img class="card__img" src="../assets/images/016.jpg" alt="">
+            <h3 class="card__title">شمیز کتان پایزه پایین هلال مدل ۰۶۳۳</h3>
+            <p class="card__price">۳,۸۰۷,۰۰۰ تومان</p>
+            <div class="colors"><i style="background:#c9b84a"></i><i style="background:#b0323c"></i><i style="background:#3d6bd1"></i></div>
+          </article>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="صفحه‌بندی">
+          <a href="#" class="is-active">۱</a>
+          <a href="#">۲</a>
+          <a href="#">۳</a>
+          <a href="#">۴</a>
+          <a href="#" class="pagination__next">بعدی <i class="ri-arrow-left-s-line"></i></a>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <form class="container newsletter__form">
+      <h2 class="newsletter__title">دریافت خبر از آینیم</h2>
+      <input class="newsletter__input" type="email" placeholder="ایمیل خود را وارد کنید" required>
+      <button class="btn btn--success">ارسال</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim" class="footer__logo">
+        <p>به فروشگاه آنلاین آینیم خوش آمدید. در فروشگاه ما انواع لباس و کیف و کفش مردانه و زنانه موجود می باشد لطفا از محصولات ما دیدن نمایید.</p>
+        <p>برای دریافت اطلاعات فروشگاه به پیج اینستاگرام فروشگاه به آدرس زیر مراجعه کنید</p>
+        <a href="#" class="footer__social"><img class="footer__social-icon" src="../assets/icons/Insta.svg" alt="">AYNIM</a>
+      </div>
+
+      <nav class="footer__col">
+        <h3>لینک های کاربردی</h3>
+        <ul class="footer__links">
+          <li><a href="../index.html"><i class="ri-arrow-left-s-line"></i> خانه</a></li>
+          <li><a href="shop.html"><i class="ri-arrow-left-s-line"></i> همه محصولات</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> لباس مردانه</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> لباس زنانه</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h3>تماس با ما</h3>
+        <ul class="contact">
+          <li><img src="../assets/icons/phone.svg" alt=""><a href="tel:09017766405">۰۹۰۱۷۷۶۶۴۰۵</a></li>
+          <li><img src="../assets/icons/email.svg" alt=""><a href="mailto:aynim@gmail.com">aynim@gmail.com</a></li>
+          <li><img src="../assets/icons/map.svg" alt="">یزد - فروشگاه آینیم</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3>نماد ها</h3>
+        <div class="trust">
+          <a href="https://www.zarinpal.com" target="_blank" rel="noopener"><img src="../assets/images/Zarin.png" alt="زرین پال"></a>
+          <a href="https://enamad.ir" target="_blank" rel="noopener"><img src="../assets/images/ENAMADpng.parspng.com_.png" alt="اینماد"></a>
+        </div>
+      </div>
+
+      <nav class="footer__col">
+        <h3>راهنمای کاربر</h3>
+        <ul class="footer__links">
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> نحوه ساخت حساب</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> نحوه ثبت سفارش</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> ثبت شکایت</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col">
+        <h3>سوالات متداول</h3>
+        <ul class="footer__links">
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> چگونه کد تخفیف هارو داشته باشم؟</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> محصول کی به دستم می رسه؟</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
+  </footer>
+
+</body>
+</html>

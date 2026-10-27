@@ -1,0 +1,347 @@
+
+/* ==========================================================================
+   Aynim - Shop page
+   ========================================================================== */
+
+/* Active link in the main navigation */
+.nav__list .is-active {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumb and page head
+   -------------------------------------------------------------------------- */
+.breadcrumb {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-inline: 0.5rem;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary);
+}
+
+.page-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.page-head__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.page-head__count {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+.shop {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Filters
+   -------------------------------------------------------------------------- */
+.filter {
+  padding: 0.5rem 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.filter__group {
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.filter__group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.filter__group summary::-webkit-details-marker {
+  display: none;
+}
+
+.filter__group summary::after {
+  content: "\25BE";
+  color: var(--muted);
+  transition: transform 0.2s;
+}
+
+.filter__group[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.filter__list {
+  margin-top: 0.75rem;
+}
+
+.filter__list li {
+  margin-bottom: 0.5rem;
+}
+
+.filter__list label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.filter__list input {
+  accent-color: var(--primary);
+}
+
+.filter__price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.filter__price input {
+  min-width: 0;
+  padding: 0.45rem 0.6rem;
+  background: #efefef;
+  border-radius: 0.4rem;
+}
+
+.filter__price input:focus {
+  outline: 1px solid var(--primary);
+}
+
+/* Color swatches and size chips: the real checkbox is hidden */
+.swatches,
+.sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.swatches input,
+.sizes input {
+  position: absolute;
+  opacity: 0;
+}
+
+.swatches label,
+.sizes label {
+  cursor: pointer;
+}
+
+.swatches span {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.swatches input:checked + span {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.sizes span {
+  display: block;
+  min-width: 2.2rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sizes span:hover {
+  border-color: var(--primary);
+}
+
+.sizes input:checked + span {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.filter__submit {
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Toolbar
+   -------------------------------------------------------------------------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.toolbar__label {
+  font-weight: 700;
+}
+
+.toolbar__sort {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.toolbar__sort a {
+  padding-block: 0.2rem;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s;
+}
+
+.toolbar__sort a:hover,
+.toolbar__sort .is-active {
+  color: var(--primary);
+}
+
+.toolbar__sort .is-active {
+  border-color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Products
+   -------------------------------------------------------------------------- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* Cards here sit on a white page, so they get a border instead of the overlap used on home */
+.products .card {
+  margin-top: 0;
+  border: 1px solid var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   Pagination
+   -------------------------------------------------------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 2rem;
+}
+
+.pagination a {
+  display: grid;
+  place-items: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  padding-inline: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pagination a:hover,
+.pagination .is-active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.pagination__next {
+  display: flex !important;
+  gap: 0.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .shop {
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  /* Filters move above the products */
+  .shop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .filter form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
+
+  .filter__submit {
+    grid-column: 1 / -1;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .page-head__title {
+    font-size: 1.25rem;
+  }
+
+  .filter form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .toolbar {
+    gap: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+
+  .toolbar__label {
+    display: none;
+  }
+
+  .toolbar__sort {
+    gap: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.8rem;
+  }
+
+  .products {
+    gap: 0.6rem;
+  }
+
+  .pagination a {
+    min-width: 2rem;
+    height: 2rem;
+  }
+}
