@@ -1,0 +1,165 @@
+/* ==========================================================================
+   Aynim - Article page
+   (.post cards live in style.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Article
+   -------------------------------------------------------------------------- */
+.article {
+  max-width: 48rem;
+  margin: 1.5rem auto 0;
+}
+
+.article__tag {
+  display: inline-block;
+  padding: 0.1rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 1rem;
+}
+
+.article__title {
+  margin-block: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.article__meta li {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.article__cover {
+  width: 100%;
+  max-height: 26rem;
+  margin-block: 1.5rem;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* --------------------------------------------------------------------------
+   Article body
+   -------------------------------------------------------------------------- */
+.article__body {
+  font-size: 1rem;
+  line-height: 2.1;
+}
+
+.article__body p {
+  margin-bottom: 1rem;
+}
+
+.article__body h2 {
+  margin-block: 1.75rem 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.article__body ul {
+  margin: 0 1.25rem 1rem 0;
+  list-style: disc;
+}
+
+.article__body a {
+  color: var(--primary);
+}
+
+.article__body a:hover {
+  text-decoration: underline;
+}
+
+.article__body blockquote {
+  margin-block: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  background: #f6f3fc;
+  border-inline-start: 4px solid var(--primary);
+  border-radius: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Share
+   -------------------------------------------------------------------------- */
+.article__foot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.share {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.share a {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.share a:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Related posts
+   -------------------------------------------------------------------------- */
+.related-posts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 850px) {
+  .related-posts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .related-posts .post:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .article__title {
+    font-size: 1.3rem;
+  }
+
+  .article__body {
+    font-size: 0.95rem;
+  }
+
+  .related-posts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .related-posts .post:last-child {
+    display: block;
+  }
+}
