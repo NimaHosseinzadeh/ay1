@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Aynim - FAQ page
+   (.page-head lives in style.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+.faq {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.faq__group {
+  margin-bottom: 2rem;
+}
+
+.faq__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Question items (native <details>, no JavaScript)
+   -------------------------------------------------------------------------- */
+.faq__item {
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.faq__item:hover,
+.faq__item:target {
+  border-color: var(--primary);
+}
+
+.faq__item[open] {
+  box-shadow: 0 4px 16px rgba(123, 79, 208, 0.12);
+}
+
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq__item summary::after {
+  content: "+";
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 1.1rem;
+  color: var(--primary);
+  background: #f6f3fc;
+  border-radius: 50%;
+}
+
+.faq__item[open] summary::after {
+  content: "\2212";
+}
+
+.faq__item p {
+  padding: 0 1rem 1rem;
+  line-height: 2;
+  color: #555;
+}
+
+/* --------------------------------------------------------------------------
+   Help box
+   -------------------------------------------------------------------------- */
+.faq__help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #f6f3fc;
+  border-radius: var(--radius);
+}
+
+.faq__help-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.faq__help p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .faq__item summary {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .faq__help {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .faq__help .btn {
+    justify-content: center;
+  }
+}
