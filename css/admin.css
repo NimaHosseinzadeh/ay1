@@ -718,3 +718,296 @@
     font-size: 1.15rem;
   }
 }
+
+/* ==========================================================================
+   Products management
+   ========================================================================== */
+
+.page-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-bar__text {
+  color: var(--muted);
+}
+
+.filters--products {
+  grid-template-columns: 2fr repeat(2, minmax(0, 1fr)) auto;
+}
+
+/* Row actions */
+.icon-link {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+  background: none;
+  border-radius: 0.5rem;
+  transition: color 0.2s, background 0.2s;
+}
+
+.icon-link:hover {
+  color: var(--primary);
+  background: #efe9fb;
+}
+
+.icon-link--danger:hover {
+  color: #e0245e;
+  background: #fdecf1;
+}
+
+/* Toggle switch (real checkbox stays for forms and keyboard) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.6rem;
+  height: 1.4rem;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.switch span {
+  position: absolute;
+  inset: 0;
+  background: #cfcfcf;
+  border-radius: 1rem;
+  transition: background 0.2s;
+}
+
+.switch span::before {
+  content: "";
+  position: absolute;
+  top: 0.15rem;
+  right: 0.15rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.switch input:checked + span {
+  background: var(--primary);
+}
+
+.switch input:checked + span::before {
+  transform: translateX(-1.2rem);
+}
+
+.switch input:focus-visible + span {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Product form
+   -------------------------------------------------------------------------- */
+.product-form {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-field {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.form-field--wide {
+  grid-column: 1 / -1;
+}
+
+.form-field > span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.form-field input:not([type="checkbox"]),
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: #efefef;
+  border-radius: 0.5rem;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Size chips and color swatches (hidden checkbox + styled span) */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip input,
+.swatch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.chip,
+.swatch {
+  cursor: pointer;
+}
+
+.chip span {
+  display: block;
+  min-width: 2.6rem;
+  padding: 0.3rem 0.7rem;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.chip input:checked + span {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.swatch span {
+  display: block;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+
+.swatch input:checked + span {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Image upload */
+.upload {
+  display: grid;
+  justify-items: center;
+  gap: 0.3rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.upload:hover {
+  background: #faf9fd;
+  border-color: var(--primary);
+}
+
+.upload i {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.upload small {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.upload input {
+  display: none;
+}
+
+/* Status rows */
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.5rem;
+}
+
+.form-actions {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.form-actions .btn {
+  justify-content: center;
+}
+
+@media (max-width: 1100px) {
+  .filters--products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .product-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .filters--products,
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Customers, articles and settings
+   ========================================================================== */
+
+.mini-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: #efe9fb;
+  border-radius: 50%;
+}
+
+.filters--simple {
+  grid-template-columns: 1fr auto;
+}
+
+.data__link + .icon-link,
+.data .icon-link {
+  vertical-align: middle;
+}
+
+.settings {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 50rem;
+}
+
+.settings .box__title {
+  margin-bottom: 0.75rem;
+}
+
+.settings__save {
+  justify-self: start;
+}

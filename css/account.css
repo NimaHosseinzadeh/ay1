@@ -517,3 +517,148 @@
     text-align: right;
   }
 }
+
+/* ==========================================================================
+   Addresses, profile and wishlist
+   ========================================================================== */
+
+/* Address cards */
+.addr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.addr {
+  display: grid;
+  gap: 0.3rem;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.addr__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.addr__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.addr__text {
+  color: var(--muted);
+}
+
+.addr__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+.addr__delete {
+  font-size: 0.85rem;
+  color: #e0245e;
+  background: none;
+}
+
+.addr__delete:hover {
+  text-decoration: underline;
+}
+
+/* Forms */
+.aform {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.aform__field {
+  display: grid;
+  gap: 0.35rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.aform__wide,
+.aform__actions {
+  grid-column: 1 / -1;
+}
+
+.aform__field > span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.aform__field input,
+.aform__field select,
+.aform__field textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: #efefef;
+  border-radius: 0.5rem;
+  resize: vertical;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.aform__field input:focus,
+.aform__field select:focus,
+.aform__field textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Wishlist */
+.wish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.wish-grid .card {
+  margin-top: 0;
+  border: 1px solid var(--border);
+}
+
+.card__remove {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: #e0245e;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.card__remove:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 850px) {
+  .wish-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .addr-grid,
+  .aform {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .wish-grid {
+    gap: 0.6rem;
+  }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مدیریت محصولات | Aynim</title>
+  <link rel="icon" href="../assets/images/aynim-high-resolution-logo.png">
+  <link rel="stylesheet" href="../assets/icons/remixicon/remixicon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar__logo"><img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim"></a>
+    <nav class="sidebar__nav" aria-label="منوی مدیریت">
+        <a href="dashboard.html"><i class="ri-dashboard-line"></i> داشبورد</a>
+        <a href="orders.html"><i class="ri-shopping-bag-3-line"></i> سفارش‌ها</a>
+        <a href="products.html" class="is-active"><i class="ri-price-tag-3-line"></i> محصولات</a>
+        <a href="customers.html"><i class="ri-group-line"></i> مشتری‌ها</a>
+        <a href="articles.html"><i class="ri-article-line"></i> مقالات</a>
+        <a href="settings.html"><i class="ri-settings-3-line"></i> تنظیمات</a>
+      <a href="../index.html" class="sidebar__out"><i class="ri-external-link-line"></i> مشاهده سایت</a>
+    </nav>
+  </aside>
+
+  <div class="admin__main">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <h1 class="topbar__title">مدیریت محصولات</h1>
+      <form class="topbar__search" role="search">
+        <i class="ri-search-line"></i>
+        <input type="search" placeholder="جستجوی سفارش یا مشتری" aria-label="جستجو">
+      </form>
+      <button class="topbar__bell" aria-label="اعلان‌ها"><i class="ri-notification-3-line"></i><span class="topbar__dot"></span></button>
+      <div class="topbar__user">
+        <span class="topbar__avatar">ا</span>
+        <span>مدیر سایت</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="page-bar">
+        <p class="page-bar__text">۱۲۸ محصول ثبت شده است</p>
+        <a href="product-form.html" class="btn btn--primary btn--sm"><i class="ri-add-line"></i> افزودن محصول</a>
+      </div>
+
+      <section class="box">
+
+        <form class="filters filters--products">
+          <label class="filters__field filters__field--wide">
+            <span>جستجو</span>
+            <input type="search" placeholder="نام یا کد محصول">
+          </label>
+          <label class="filters__field">
+            <span>دسته‌بندی</span>
+            <select>
+              <option>همه</option>
+              <option>زنانه</option>
+              <option>مردانه</option>
+              <option>بچه‌گانه</option>
+            </select>
+          </label>
+          <label class="filters__field">
+            <span>موجودی</span>
+            <select>
+              <option>همه</option>
+              <option>موجود</option>
+              <option>موجودی کم</option>
+              <option>ناموجود</option>
+            </select>
+          </label>
+          <button class="btn btn--primary btn--sm">اعمال فیلتر</button>
+        </form>
+
+        <div class="data-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>محصول</th>
+                <th>کد</th>
+                <th>دسته</th>
+                <th>قیمت</th>
+                <th>موجودی</th>
+                <th>فعال</th>
+                <th>عملیات</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+                <div class="product-cell">
+                  <img src="../assets/images/014.jpg" alt="">
+                  <strong>تی شرت دو رو چاپ مردانه</strong>
+                </div>
+              </td>
+              <td>۰۳۷</td>
+              <td>مردانه</td>
+              <td>۸۶۸,۰۰۰ تومان</td>
+              <td>45</td>
+              <td><label class="switch"><input type="checkbox" checked aria-label="فعال"><span></span></label></td>
+              <td>
+                <a href="product-form.html" class="icon-link" aria-label="ویرایش"><i class="ri-edit-line"></i></a>
+                <button class="icon-link icon-link--danger" aria-label="حذف"><i class="ri-delete-bin-line"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-cell">
+                  <img src="../assets/images/013.jpg" alt="">
+                  <strong>شمیز زنانه درسا</strong>
+                </div>
+              </td>
+              <td>۰۸۵۱</td>
+              <td>زنانه</td>
+              <td>۵۹۷,۰۰۰ تومان<small class="cell-sub"><del>۷۲۰,۰۰۰</del></small></td>
+              <td>18</td>
+              <td><label class="switch"><input type="checkbox" checked aria-label="فعال"><span></span></label></td>
+              <td>
+                <a href="product-form.html" class="icon-link" aria-label="ویرایش"><i class="ri-edit-line"></i></a>
+                <button class="icon-link icon-link--danger" aria-label="حذف"><i class="ri-delete-bin-line"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-cell">
+                  <img src="../assets/images/012.jpg" alt="">
+                  <strong>تی شرت آستین کوتاه یقه گرد</strong>
+                </div>
+              </td>
+              <td>۰۳۹</td>
+              <td>مردانه</td>
+              <td>۸۸۷,۰۰۰ تومان</td>
+              <td>3 <span class="badge badge--processing">کم</span></td>
+              <td><label class="switch"><input type="checkbox" checked aria-label="فعال"><span></span></label></td>
+              <td>
+                <a href="product-form.html" class="icon-link" aria-label="ویرایش"><i class="ri-edit-line"></i></a>
+                <button class="icon-link icon-link--danger" aria-label="حذف"><i class="ri-delete-bin-line"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-cell">
+                  <img src="../assets/images/018.jpg" alt="">
+                  <strong>سوییشرت پنبه ای دورس</strong>
+                </div>
+              </td>
+              <td>۰۷۶۸</td>
+              <td>مردانه</td>
+              <td>۹۶۸,۰۰۰ تومان</td>
+              <td>27</td>
+              <td><label class="switch"><input type="checkbox" checked aria-label="فعال"><span></span></label></td>
+              <td>
+                <a href="product-form.html" class="icon-link" aria-label="ویرایش"><i class="ri-edit-line"></i></a>
+                <button class="icon-link icon-link--danger" aria-label="حذف"><i class="ri-delete-bin-line"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-cell">
+                  <img src="../assets/images/017.jpg" alt="">
+                  <strong>سارافون مجلسی دخترانه</strong>
+                </div>
+              </td>
+              <td>۱۲۰۴</td>
+              <td>بچه‌گانه</td>
+              <td>۱,۶۰۲,۰۰۰ تومان<small class="cell-sub"><del>۲,۸۰۰,۰۰۰</del></small></td>
+              <td><span class="badge badge--canceled">ناموجود</span></td>
+              <td><label class="switch"><input type="checkbox" aria-label="فعال"><span></span></label></td>
+              <td>
+                <a href="product-form.html" class="icon-link" aria-label="ویرایش"><i class="ri-edit-line"></i></a>
+                <button class="icon-link icon-link--danger" aria-label="حذف"><i class="ri-delete-bin-line"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="product-cell">
+                  <img src="../assets/images/015.jpg" alt="">
+                  <strong>ست بلوز شلوار پاییزه</strong>
+                </div>
+              </td>
+              <td>۰۶۳۱</td>
+              <td>بچه‌گانه</td>
+              <td>۲,۴۷۰,۰۰۰ تومان</td>
+              <td>12</td>
+              <td><label class="switch"><input type="checkbox" checked aria-label="فعال"><span></span></label></td>
+              <td>
+                <a href="product-form.html" class="icon-link" aria-label="ویرایش"><i class="ri-edit-line"></i></a>
+                <button class="icon-link icon-link--danger" aria-label="حذف"><i class="ri-delete-bin-line"></i></button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <nav class="pagination" aria-label="صفحه‌بندی">
+          <a href="#" class="is-active">۱</a>
+          <a href="#">۲</a>
+          <a href="#">۳</a>
+          <a href="#" class="pagination__next">بعدی <i class="ri-arrow-left-s-line"></i></a>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
