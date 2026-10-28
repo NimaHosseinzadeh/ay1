@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مدیریت سفارش‌ها | Aynim</title>
+  <link rel="icon" href="../assets/images/aynim-high-resolution-logo.png">
+  <link rel="stylesheet" href="../assets/icons/remixicon/remixicon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar__logo"><img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim"></a>
+    <nav class="sidebar__nav" aria-label="منوی مدیریت">
+        <a href="dashboard.html"><i class="ri-dashboard-line"></i> داشبورد</a>
+        <a href="orders.html" class="is-active"><i class="ri-shopping-bag-3-line"></i> سفارش‌ها</a>
+        <a href="#"><i class="ri-price-tag-3-line"></i> محصولات</a>
+        <a href="#"><i class="ri-group-line"></i> مشتری‌ها</a>
+        <a href="#"><i class="ri-article-line"></i> مقالات</a>
+        <a href="#"><i class="ri-settings-3-line"></i> تنظیمات</a>
+      <a href="../index.html" class="sidebar__out"><i class="ri-external-link-line"></i> مشاهده سایت</a>
+    </nav>
+  </aside>
+
+  <div class="admin__main">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <h1 class="topbar__title">مدیریت سفارش‌ها</h1>
+      <form class="topbar__search" role="search">
+        <i class="ri-search-line"></i>
+        <input type="search" placeholder="جستجوی سفارش یا مشتری" aria-label="جستجو">
+      </form>
+      <button class="topbar__bell" aria-label="اعلان‌ها"><i class="ri-notification-3-line"></i><span class="topbar__dot"></span></button>
+      <div class="topbar__user">
+        <span class="topbar__avatar">ا</span>
+        <span>مدیر سایت</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- Status tabs -->
+      <ul class="status-tabs">
+        <li><a href="#" class="status-tabs__item is-active">همه <span>۱۲۸</span></a></li>
+        <li><a href="#" class="status-tabs__item">در حال پردازش <span>۸</span></a></li>
+        <li><a href="#" class="status-tabs__item">ارسال شده <span>۱۴</span></a></li>
+        <li><a href="#" class="status-tabs__item">تحویل شده <span>۹۸</span></a></li>
+        <li><a href="#" class="status-tabs__item">لغو شده <span>۸</span></a></li>
+      </ul>
+
+      <section class="box">
+
+        <!-- Filters -->
+        <form class="filters">
+          <label class="filters__field filters__field--wide">
+            <span>جستجو</span>
+            <input type="search" placeholder="شماره سفارش، نام یا موبایل">
+          </label>
+          <label class="filters__field">
+            <span>وضعیت پرداخت</span>
+            <select>
+              <option>همه</option>
+              <option>پرداخت شده</option>
+              <option>پرداخت نشده</option>
+            </select>
+          </label>
+          <label class="filters__field">
+            <span>از تاریخ</span>
+            <input type="text" placeholder="۱۴۰۵/۰۸/۰۱">
+          </label>
+          <label class="filters__field">
+            <span>تا تاریخ</span>
+            <input type="text" placeholder="۱۴۰۵/۰۸/۳۰">
+          </label>
+          <button class="btn btn--primary btn--sm">اعمال فیلتر</button>
+        </form>
+
+        <!-- Orders -->
+        <div class="data-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>سفارش</th>
+                <th>مشتری</th>
+                <th>تاریخ</th>
+                <th>مبلغ</th>
+                <th>پرداخت</th>
+                <th>وضعیت سفارش</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>#۱۰۲۴۹۱</td>
+              <td><strong class="cell-name">محمد رضایی</strong><small class="cell-sub">۰۹۱۲۳۴۵۶۷۸۹</small></td>
+              <td>۱۴۰۵/۰۸/۰۶</td>
+              <td>۳,۰۸۹,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۹۱"><option value="processing" selected>در حال پردازش</option><option value="shipped">ارسال شده</option><option value="delivered">تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۹۰</td>
+              <td><strong class="cell-name">سارا احمدی</strong><small class="cell-sub">۰۹۳۵۱۲۳۴۵۶۷</small></td>
+              <td>۱۴۰۵/۰۸/۰۶</td>
+              <td>۱,۶۰۲,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۹۰"><option value="processing" selected>در حال پردازش</option><option value="shipped">ارسال شده</option><option value="delivered">تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۸۹</td>
+              <td><strong class="cell-name">علی کریمی</strong><small class="cell-sub">۰۹۱۹۸۷۶۵۴۳۲</small></td>
+              <td>۱۴۰۵/۰۸/۰۵</td>
+              <td>۸۶۸,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۸۹"><option value="processing">در حال پردازش</option><option value="shipped" selected>ارسال شده</option><option value="delivered">تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۸۸</td>
+              <td><strong class="cell-name">مریم حسینی</strong><small class="cell-sub">۰۹۰۱۲۳۴۴۵۵۶</small></td>
+              <td>۱۴۰۵/۰۸/۰۴</td>
+              <td>۵۹۷,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۸۸"><option value="processing">در حال پردازش</option><option value="shipped">ارسال شده</option><option value="delivered" selected>تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۸۷</td>
+              <td><strong class="cell-name">رضا موسوی</strong><small class="cell-sub">۰۹۱۳۷۷۷۸۸۹۹</small></td>
+              <td>۱۴۰۵/۰۸/۰۳</td>
+              <td>۹۶۸,۰۰۰ تومان</td>
+              <td><span class="badge badge--canceled">پرداخت نشده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۸۷"><option value="processing">در حال پردازش</option><option value="shipped">ارسال شده</option><option value="delivered">تحویل شده</option><option value="canceled" selected>لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۸۶</td>
+              <td><strong class="cell-name">نرگس صادقی</strong><small class="cell-sub">۰۹۱۷۶۶۵۵۴۴۳</small></td>
+              <td>۱۴۰۵/۰۸/۰۲</td>
+              <td>۲,۴۷۰,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۸۶"><option value="processing">در حال پردازش</option><option value="shipped" selected>ارسال شده</option><option value="delivered">تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۸۵</td>
+              <td><strong class="cell-name">حسین نوری</strong><small class="cell-sub">۰۹۱۲۱۱۲۲۳۳۴</small></td>
+              <td>۱۴۰۵/۰۸/۰۱</td>
+              <td>۸۸۷,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۸۵"><option value="processing">در حال پردازش</option><option value="shipped">ارسال شده</option><option value="delivered" selected>تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            <tr>
+              <td>#۱۰۲۴۸۴</td>
+              <td><strong class="cell-name">زهرا کاظمی</strong><small class="cell-sub">۰۹۳۶۹۹۸۸۷۷۶</small></td>
+              <td>۱۴۰۵/۰۷/۳۰</td>
+              <td>۳,۸۰۷,۰۰۰ تومان</td>
+              <td><span class="badge badge--delivered">پرداخت شده</span></td>
+              <td>
+                <select class="status-select" aria-label="وضعیت سفارش ۱۰۲۴۸۴"><option value="processing">در حال پردازش</option><option value="shipped">ارسال شده</option><option value="delivered" selected>تحویل شده</option><option value="canceled">لغو شده</option></select>
+              </td>
+              <td><a href="#" class="data__link">مشاهده</a></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <nav class="pagination" aria-label="صفحه‌بندی">
+          <a href="#" class="is-active">۱</a>
+          <a href="#">۲</a>
+          <a href="#">۳</a>
+          <a href="#">۴</a>
+          <a href="#" class="pagination__next">بعدی <i class="ri-arrow-left-s-line"></i></a>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
