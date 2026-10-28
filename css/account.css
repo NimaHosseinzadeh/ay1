@@ -1,0 +1,370 @@
+/* ==========================================================================
+   Aynim - Customer account panel
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+.account {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar
+   -------------------------------------------------------------------------- */
+.side {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.side__user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.side__avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.side__name {
+  font-weight: 700;
+}
+
+.side__phone {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.side__nav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.side__nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.side__nav a:hover,
+.side__nav a.is-active {
+  color: var(--primary);
+  background: #f6f3fc;
+}
+
+.side__nav i {
+  font-size: 1.15rem;
+}
+
+.side__logout {
+  margin-top: 0.5rem;
+  color: #e0245e;
+}
+
+.side__nav .side__logout:hover {
+  color: #e0245e;
+  background: #fdecf1;
+}
+
+/* --------------------------------------------------------------------------
+   Panel
+   -------------------------------------------------------------------------- */
+.panel {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.panel__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stats__item {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.25rem;
+  background: #f6f3fc;
+  border-radius: var(--radius);
+}
+
+.stats__item strong {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.stats__item span {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Boxes */
+.card-box {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card-box__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.card-box__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.card-box__meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Order tracker
+   -------------------------------------------------------------------------- */
+.track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  counter-reset: step;
+}
+
+.track__step {
+  position: relative;
+  padding-top: 2.4rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--muted);
+  counter-increment: step;
+}
+
+/* Circle with the step number */
+.track__step::before {
+  content: counter(step, persian);
+  position: absolute;
+  top: 0;
+  right: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: #e6e6e6;
+  border-radius: 50%;
+  transform: translateX(50%);
+}
+
+/* Line to the next step */
+.track__step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0.85rem;
+  right: 50%;
+  width: 100%;
+  height: 2px;
+  background: #e6e6e6;
+}
+
+.track__step.is-done,
+.track__step.is-current {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.track__step.is-done::before,
+.track__step.is-current::before {
+  color: #fff;
+  background: var(--primary);
+}
+
+.track__step.is-done::before {
+  background: var(--green);
+}
+
+.track__step.is-done::after {
+  background: var(--green);
+}
+
+/* --------------------------------------------------------------------------
+   Orders table
+   -------------------------------------------------------------------------- */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  padding: 0.6rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: right;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: 0.8rem 0.5rem;
+  font-size: 0.85rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.table tr:last-child td {
+  border-bottom: 0;
+}
+
+.table__link {
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.table__link:hover {
+  text-decoration: underline;
+}
+
+/* Status badges */
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 1rem;
+}
+
+.badge--processing {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.badge--shipped {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.badge--delivered {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.badge--canceled {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .account {
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .account {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Sidebar becomes a horizontal scrolling menu */
+  .side__nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .side__logout {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel__title {
+    font-size: 1.2rem;
+  }
+
+  .stats {
+    gap: 0.5rem;
+  }
+
+  .stats__item {
+    padding: 0.75rem;
+  }
+
+  .stats__item strong {
+    font-size: 1.25rem;
+  }
+
+  .stats__item span {
+    font-size: 0.7rem;
+  }
+
+  .card-box {
+    padding: 1rem;
+  }
+
+  .card-box__head {
+    flex-wrap: wrap;
+  }
+
+  .track__step {
+    font-size: 0.7rem;
+  }
+
+  /* Each table row becomes a small card */
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    display: grid;
+    gap: 0.3rem;
+    padding-block: 0.75rem;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border: 0;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+  }
+}
