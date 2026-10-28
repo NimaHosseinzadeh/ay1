@@ -114,21 +114,21 @@
           <legend class="block__title">روش ارسال</legend>
           <div class="choices">
             <label class="choice">
-              <input type="radio" name="ship" checked>
+              <input type="radio" name="ship" data-cost="0" checked>
               <span class="choice__box">
                 <span class="choice__text"><strong>پست پیشتاز</strong><small>تحویل ۲ تا ۴ روز کاری</small></span>
                 <span class="choice__price">رایگان</span>
               </span>
             </label>
             <label class="choice">
-              <input type="radio" name="ship">
+              <input type="radio" name="ship" data-cost="80000">
               <span class="choice__box">
                 <span class="choice__text"><strong>پیک موتوری</strong><small>فقط داخل شهر یزد، همان روز</small></span>
                 <span class="choice__price">۸۰,۰۰۰ تومان</span>
               </span>
             </label>
             <label class="choice">
-              <input type="radio" name="ship">
+              <input type="radio" name="ship" data-cost="0">
               <span class="choice__box">
                 <span class="choice__text"><strong>تحویل حضوری</strong><small>از فروشگاه آینیم در یزد</small></span>
                 <span class="choice__price">رایگان</span>
@@ -179,11 +179,11 @@
           </li>
         </ul>
 
-        <dl class="summary__list">
+        <dl class="summary__list" data-base="3089000">
           <div><dt>قیمت کالاها</dt><dd>۳,۵۵۸,۰۰۰ تومان</dd></div>
           <div class="summary__discount"><dt>تخفیف</dt><dd>۴۶۹,۰۰۰ تومان</dd></div>
-          <div><dt>هزینه ارسال</dt><dd>رایگان</dd></div>
-          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd>۳,۰۸۹,۰۰۰ تومان</dd></div>
+          <div><dt>هزینه ارسال</dt><dd data-ship>رایگان</dd></div>
+          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd data-total>۳,۰۸۹,۰۰۰ تومان</dd></div>
         </dl>
 
         <button class="btn btn--primary summary__pay" form="checkout-form">پرداخت و ثبت سفارش</button>
@@ -258,5 +258,7 @@
     <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
   </footer>
 
+  <script src="../js/main.js" defer></script>
+  <script src="../js/checkout.js" defer></script>
 </body>
 </html>

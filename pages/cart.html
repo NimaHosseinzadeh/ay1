@@ -55,14 +55,14 @@
 
     <div class="page-head">
       <h1 class="page-head__title">سبد خرید</h1>
-      <p class="page-head__count">۳ کالا در سبد شما</p>
+      <p class="page-head__count" data-count>۳ کالا در سبد شما</p>
     </div>
 
     <div class="cart-page">
 
       <!-- Items -->
       <ul class="items">
-        <li class="item">
+        <li class="item" data-price="927000" data-old="1150000">
           <a href="product.html" class="item__img"><img src="../assets/images/011.jpg" alt=""></a>
           <div class="item__info">
             <h3 class="item__title"><a href="product.html">ست تیشرت و شلوارک مردانه هایکا مدل ۰۸۴۶</a></h3>
@@ -76,7 +76,7 @@
           <p class="item__total">۹۲۷,۰۰۰ تومان</p>
           <button class="item__remove" aria-label="حذف از سبد"><i class="ri-delete-bin-line"></i></button>
         </li>
-        <li class="item">
+        <li class="item" data-price="597000" data-old="720000">
           <a href="product.html" class="item__img"><img src="../assets/images/013.jpg" alt=""></a>
           <div class="item__info">
             <h3 class="item__title"><a href="product.html">شمیز زنانه درسا مدل ۰۸۵۱</a></h3>
@@ -90,7 +90,7 @@
           <p class="item__total">۱,۱۹۴,۰۰۰ تومان</p>
           <button class="item__remove" aria-label="حذف از سبد"><i class="ri-delete-bin-line"></i></button>
         </li>
-        <li class="item">
+        <li class="item" data-price="968000">
           <a href="product.html" class="item__img"><img src="../assets/images/018.jpg" alt=""></a>
           <div class="item__info">
             <h3 class="item__title"><a href="product.html">سوییشرت پنبه ای دورس مردانه مدل ۰۷۶۸</a></h3>
@@ -115,10 +115,10 @@
         </form>
 
         <dl class="summary__list">
-          <div><dt>قیمت کالاها</dt><dd>۳,۵۵۸,۰۰۰ تومان</dd></div>
-          <div class="summary__discount"><dt>تخفیف</dt><dd>۴۶۹,۰۰۰ تومان</dd></div>
+          <div><dt>قیمت کالاها</dt><dd data-sum="subtotal">۳,۵۵۸,۰۰۰ تومان</dd></div>
+          <div class="summary__discount"><dt>تخفیف</dt><dd data-sum="discount">۴۶۹,۰۰۰ تومان</dd></div>
           <div><dt>هزینه ارسال</dt><dd>رایگان</dd></div>
-          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd>۳,۰۸۹,۰۰۰ تومان</dd></div>
+          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd data-sum="total">۳,۰۸۹,۰۰۰ تومان</dd></div>
         </dl>
 
         <a href="checkout.html" class="btn btn--primary summary__pay">ادامه فرآیند خرید</a>
@@ -193,5 +193,7 @@
     <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
   </footer>
 
+  <script src="../js/main.js" defer></script>
+  <script src="../js/cart.js" defer></script>
 </body>
 </html>
