@@ -896,3 +896,34 @@ button {
   display: flex !important;
   gap: 0.2rem;
 }
+
+/* --------------------------------------------------------------------------
+   Status badges (customer and admin panels)
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 1rem;
+}
+
+.badge--processing {
+  color: #b45309;
+  background: #fef3c7;
+}
+
+.badge--shipped {
+  color: #1d4ed8;
+  background: #dbeafe;
+}
+
+.badge--delivered {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+.badge--canceled {
+  color: #b91c1c;
+  background: #fee2e2;
+}

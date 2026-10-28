@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>داشبورد مدیریت | Aynim</title>
+  <link rel="icon" href="../assets/images/aynim-high-resolution-logo.png">
+  <link rel="stylesheet" href="../assets/icons/remixicon/remixicon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <a href="dashboard.html" class="sidebar__logo"><img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim"></a>
+    <nav class="sidebar__nav" aria-label="منوی مدیریت">
+        <a href="dashboard.html" class="is-active"><i class="ri-dashboard-line"></i> داشبورد</a>
+        <a href="#"><i class="ri-shopping-bag-3-line"></i> سفارش‌ها</a>
+        <a href="#"><i class="ri-price-tag-3-line"></i> محصولات</a>
+        <a href="#"><i class="ri-group-line"></i> مشتری‌ها</a>
+        <a href="#"><i class="ri-article-line"></i> مقالات</a>
+        <a href="#"><i class="ri-settings-3-line"></i> تنظیمات</a>
+      <a href="../index.html" class="sidebar__out"><i class="ri-external-link-line"></i> مشاهده سایت</a>
+    </nav>
+  </aside>
+
+  <div class="admin__main">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <h1 class="topbar__title">داشبورد مدیریت</h1>
+      <form class="topbar__search" role="search">
+        <i class="ri-search-line"></i>
+        <input type="search" placeholder="جستجوی سفارش یا مشتری" aria-label="جستجو">
+      </form>
+      <button class="topbar__bell" aria-label="اعلان‌ها"><i class="ri-notification-3-line"></i><span class="topbar__dot"></span></button>
+      <div class="topbar__user">
+        <span class="topbar__avatar">ا</span>
+        <span>مدیر سایت</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- Stats -->
+      <ul class="stats">
+      <li class="stat">
+        <span class="stat__icon stat__icon--green"><i class="ri-money-dollar-circle-line"></i></span>
+        <div><strong>۱۲,۴۵۰,۰۰۰</strong><span>فروش امروز (تومان)</span></div>
+      </li>
+      <li class="stat">
+        <span class="stat__icon stat__icon--purple"><i class="ri-shopping-bag-3-line"></i></span>
+        <div><strong>۸</strong><span>سفارش جدید</span></div>
+      </li>
+      <li class="stat">
+        <span class="stat__icon stat__icon--blue"><i class="ri-group-line"></i></span>
+        <div><strong>۳۴۲</strong><span>مشتری</span></div>
+      </li>
+      <li class="stat">
+        <span class="stat__icon stat__icon--orange"><i class="ri-price-tag-3-line"></i></span>
+        <div><strong>۱۲۸</strong><span>محصول</span></div>
+      </li>
+      </ul>
+
+      <div class="grid">
+
+        <!-- Weekly sales -->
+        <section class="box">
+          <h2 class="box__title">فروش هفته</h2>
+          <ul class="chart">
+          <li class="chart__bar" style="--h:55%"><span>شنبه</span></li>
+          <li class="chart__bar" style="--h:70%"><span>یکشنبه</span></li>
+          <li class="chart__bar" style="--h:40%"><span>دوشنبه</span></li>
+          <li class="chart__bar" style="--h:85%"><span>سه‌شنبه</span></li>
+          <li class="chart__bar" style="--h:60%"><span>چهارشنبه</span></li>
+          <li class="chart__bar" style="--h:95%"><span>پنجشنبه</span></li>
+          <li class="chart__bar" style="--h:30%"><span>جمعه</span></li>
+          </ul>
+        </section>
+
+        <!-- Top products -->
+        <section class="box">
+          <h2 class="box__title">پرفروش‌ترین‌ها</h2>
+          <ul class="top">
+        <li class="top__item">
+          <img src="../assets/images/014.jpg" alt="">
+          <span class="top__title">تی شرت دو رو چاپ مردانه</span>
+          <span class="top__count">۴۲ فروش</span>
+        </li>
+        <li class="top__item">
+          <img src="../assets/images/012.jpg" alt="">
+          <span class="top__title">تی شرت آستین کوتاه یقه گرد</span>
+          <span class="top__count">۳۱ فروش</span>
+        </li>
+        <li class="top__item">
+          <img src="../assets/images/018.jpg" alt="">
+          <span class="top__title">سوییشرت پنبه ای دورس</span>
+          <span class="top__count">۲۷ فروش</span>
+        </li>
+        <li class="top__item">
+          <img src="../assets/images/013.jpg" alt="">
+          <span class="top__title">شمیز زنانه درسا</span>
+          <span class="top__count">۱۹ فروش</span>
+        </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Latest orders -->
+      <section class="box">
+        <div class="box__head">
+          <h2 class="box__title">آخرین سفارش‌ها</h2>
+          <a href="#" class="data__link">مشاهده همه</a>
+        </div>
+        <div class="data-wrap">
+          <table class="data">
+            <thead>
+              <tr>
+                <th>سفارش</th>
+                <th>مشتری</th>
+                <th>تاریخ</th>
+                <th>مبلغ</th>
+                <th>وضعیت</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr>
+            <td>#۱۰۲۴۹۱</td>
+            <td>محمد رضایی</td>
+            <td>۱۴۰۵/۰۸/۰۶</td>
+            <td>۳,۰۸۹,۰۰۰ تومان</td>
+            <td><span class="badge badge--processing">در حال پردازش</span></td>
+            <td><a href="#" class="data__link">مشاهده</a></td>
+          </tr>
+          <tr>
+            <td>#۱۰۲۴۹۰</td>
+            <td>سارا احمدی</td>
+            <td>۱۴۰۵/۰۸/۰۶</td>
+            <td>۱,۶۰۲,۰۰۰ تومان</td>
+            <td><span class="badge badge--processing">در حال پردازش</span></td>
+            <td><a href="#" class="data__link">مشاهده</a></td>
+          </tr>
+          <tr>
+            <td>#۱۰۲۴۸۹</td>
+            <td>علی کریمی</td>
+            <td>۱۴۰۵/۰۸/۰۵</td>
+            <td>۸۶۸,۰۰۰ تومان</td>
+            <td><span class="badge badge--shipped">ارسال شده</span></td>
+            <td><a href="#" class="data__link">مشاهده</a></td>
+          </tr>
+          <tr>
+            <td>#۱۰۲۴۸۸</td>
+            <td>مریم حسینی</td>
+            <td>۱۴۰۵/۰۸/۰۴</td>
+            <td>۵۹۷,۰۰۰ تومان</td>
+            <td><span class="badge badge--delivered">تحویل شده</span></td>
+            <td><a href="#" class="data__link">مشاهده</a></td>
+          </tr>
+          <tr>
+            <td>#۱۰۲۴۸۷</td>
+            <td>رضا موسوی</td>
+            <td>۱۴۰۵/۰۸/۰۳</td>
+            <td>۹۶۸,۰۰۰ تومان</td>
+            <td><span class="badge badge--canceled">لغو شده</span></td>
+            <td><a href="#" class="data__link">مشاهده</a></td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
