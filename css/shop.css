@@ -1,38 +1,10 @@
-
 /* ==========================================================================
    Aynim - Shop page
    ========================================================================== */
 
-/* Active link in the main navigation */
-.nav__list .is-active {
-  font-weight: 700;
-  color: var(--primary);
-}
-
 /* --------------------------------------------------------------------------
-   Breadcrumb and page head
+   Page head
    -------------------------------------------------------------------------- */
-.breadcrumb {
-  margin-top: 1.5rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.breadcrumb ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.breadcrumb li + li::before {
-  content: "/";
-  margin-inline: 0.5rem;
-}
-
-.breadcrumb a:hover {
-  color: var(--primary);
-}
-
 .page-head {
   display: flex;
   align-items: baseline;

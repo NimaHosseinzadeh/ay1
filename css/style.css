@@ -536,6 +536,13 @@ button {
   font-weight: 500;
 }
 
+/* Makes the whole card clickable through the title link */
+.card__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
 .card__old {
   padding-inline: 0.75rem;
   text-align: left;
@@ -804,4 +811,34 @@ button {
   font-weight: 700;
   text-align: center;
   border-top: 1px dashed var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Shared (used on inner pages)
+   -------------------------------------------------------------------------- */
+/* Active link in the main navigation */
+.nav__list .is-active {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.breadcrumb {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin-inline: 0.5rem;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary);
 }
