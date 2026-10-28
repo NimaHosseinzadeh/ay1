@@ -3,27 +3,6 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Page head
-   -------------------------------------------------------------------------- */
-.page-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-block: 1rem 1.5rem;
-}
-
-.page-head__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.page-head__count {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-/* --------------------------------------------------------------------------
    Layout
    -------------------------------------------------------------------------- */
 .shop {
@@ -217,39 +196,6 @@
 .products .card {
   margin-top: 0;
   border: 1px solid var(--border);
-}
-
-/* --------------------------------------------------------------------------
-   Pagination
-   -------------------------------------------------------------------------- */
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  margin-top: 2rem;
-}
-
-.pagination a {
-  display: grid;
-  place-items: center;
-  min-width: 2.2rem;
-  height: 2.2rem;
-  padding-inline: 0.6rem;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  transition: background 0.2s, color 0.2s;
-}
-
-.pagination a:hover,
-.pagination .is-active {
-  color: #fff;
-  background: var(--primary);
-  border-color: var(--primary);
-}
-
-.pagination__next {
-  display: flex !important;
-  gap: 0.2rem;
 }
 
 /* --------------------------------------------------------------------------

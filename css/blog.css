@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Aynim - Blog page
+   (.post cards, .page-head and .pagination live in style.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Category chips
+   -------------------------------------------------------------------------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.chips__item {
+  display: block;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.chips__item:hover,
+.chips__item.is-active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Featured post
+   -------------------------------------------------------------------------- */
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+}
+
+.featured__img {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.6rem;
+}
+
+.featured__img img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.featured__img:hover img {
+  transform: scale(1.05);
+}
+
+.featured__body {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+.featured__tag {
+  padding: 0.1rem 0.9rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 1rem;
+}
+
+.featured__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.featured__title a:hover {
+  color: var(--primary);
+}
+
+.featured__text {
+  color: #555;
+  line-height: 2;
+}
+
+.featured__date {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Posts grid
+   -------------------------------------------------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.blog-grid .post img {
+  height: 11rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 850px) {
+  .featured {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featured__img img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .featured__title {
+    font-size: 1.1rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .blog-grid .post img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
