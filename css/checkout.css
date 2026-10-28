@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Aynim - Checkout page
+   (loaded after cart.css: it reuses .cart-page, .summary and .page-head)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Steps
+   -------------------------------------------------------------------------- */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-block: 1.5rem;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: #f2f2f2;
+  border-radius: 2rem;
+  counter-increment: step;
+}
+
+.steps__item::before {
+  content: counter(step, persian);
+  display: grid;
+  place-items: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-size: 0.75rem;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.steps__item.is-done,
+.steps__item.is-current {
+  color: #fff;
+  background: var(--primary);
+}
+
+.steps__item.is-done {
+  background: var(--green);
+}
+
+.steps__item.is-current::before,
+.steps__item.is-done::before {
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Form blocks
+   -------------------------------------------------------------------------- */
+.checkout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.block {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.block__title {
+  padding-inline: 0.5rem;
+  font-weight: 700;
+}
+
+.block__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.field--wide {
+  grid-column: 1 / -1;
+}
+
+.field__label {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.field__input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: #efefef;
+  border-radius: 0.5rem;
+  resize: vertical;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.field__input:focus {
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   Radio cards (shipping / payment)
+   -------------------------------------------------------------------------- */
+.choices {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.choice__box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.choice__box:hover {
+  border-color: var(--primary);
+}
+
+.choice input:checked + .choice__box {
+  background: #f6f3fc;
+  border-color: var(--primary);
+}
+
+.choice input:focus-visible + .choice__box {
+  outline: 2px solid var(--primary);
+}
+
+.choice__logo {
+  width: 2.5rem;
+}
+
+.choice__text {
+  display: grid;
+  flex: 1;
+}
+
+.choice__text small {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.choice__price {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Order summary items
+   -------------------------------------------------------------------------- */
+.mini {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.mini__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.mini__item img {
+  width: 2.8rem;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+.mini__title {
+  flex: 1;
+}
+
+.mini__qty {
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .steps {
+    gap: 0.3rem;
+  }
+
+  .steps__item {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .block {
+    padding: 1rem;
+  }
+
+  .block__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

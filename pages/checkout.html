@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تسویه حساب | Aynim</title>
+  <link rel="icon" href="../assets/images/aynim-high-resolution-logo.png">
+  <link rel="stylesheet" href="../assets/icons/remixicon/remixicon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/cart.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__top">
+      <a href="../index.html" class="header__logo"><img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim"></a>
+
+      <form class="search" role="search">
+        <input class="search__input" type="search" placeholder="جستجوی محصولات">
+        <button class="search__btn" aria-label="جستجو"><img src="../assets/icons/search.svg" alt=""></button>
+      </form>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="علاقه‌مندی‌ها">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z"/></svg>
+        </button>
+        <a href="login.html" class="btn btn--primary btn--sm"><img src="../assets/icons/account.svg" alt="">ورود / ثبت نام</a>
+        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۱</span></a>
+      </div>
+    </div>
+
+    <nav class="container nav">
+      <a href="#" class="btn btn--primary">دسته بندی محصولات</a>
+      <ul class="nav__list">
+        <li><a href="../index.html"><img src="../assets/icons/home.svg" alt="">صفحه اصلی</a></li>
+        <li><a href="shop.html"><img src="../assets/icons/shop.svg" alt="">فروشگاه</a></li>
+        <li><a href="#"><img src="../assets/icons/blog.svg" alt="">بلاگ</a></li>
+        <li><a href="#"><img src="../assets/icons/message-chat.svg" alt="">سوالات متداول</a></li>
+      </ul>
+      <a href="#" class="btn btn--dark btn--sm"><img src="../assets/icons/notification.svg" alt="">همکاری در فروش</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="مسیر صفحه">
+      <ol>
+        <li><a href="../index.html">خانه</a></li>
+        <li><a href="cart.html">سبد خرید</a></li>
+        <li aria-current="page">تسویه حساب</li>
+      </ol>
+    </nav>
+
+    <!-- Steps -->
+    <ol class="steps">
+      <li class="steps__item is-done">سبد خرید</li>
+      <li class="steps__item is-current">اطلاعات و پرداخت</li>
+      <li class="steps__item">ثبت سفارش</li>
+    </ol>
+
+    <div class="cart-page">
+
+      <form class="checkout" id="checkout-form">
+
+        <!-- Receiver -->
+        <fieldset class="block">
+          <legend class="block__title">اطلاعات گیرنده</legend>
+          <div class="block__grid">
+            <label class="field">
+              <span class="field__label">نام و نام خانوادگی</span>
+              <input class="field__input" type="text" required>
+            </label>
+            <label class="field">
+              <span class="field__label">شماره موبایل</span>
+              <input class="field__input" type="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹" required>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Address -->
+        <fieldset class="block">
+          <legend class="block__title">آدرس تحویل</legend>
+          <div class="block__grid">
+            <label class="field">
+              <span class="field__label">استان</span>
+              <select class="field__input">
+                <option>یزد</option>
+                <option>تهران</option>
+                <option>اصفهان</option>
+                <option>فارس</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">شهر</span>
+              <input class="field__input" type="text" required>
+            </label>
+            <label class="field">
+              <span class="field__label">کد پستی</span>
+              <input class="field__input" type="text" inputmode="numeric" maxlength="10" required>
+            </label>
+            <label class="field field--wide">
+              <span class="field__label">آدرس کامل</span>
+              <textarea class="field__input" rows="3" required></textarea>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Shipping -->
+        <fieldset class="block">
+          <legend class="block__title">روش ارسال</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio" name="ship" checked>
+              <span class="choice__box">
+                <span class="choice__text"><strong>پست پیشتاز</strong><small>تحویل ۲ تا ۴ روز کاری</small></span>
+                <span class="choice__price">رایگان</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="ship">
+              <span class="choice__box">
+                <span class="choice__text"><strong>پیک موتوری</strong><small>فقط داخل شهر یزد، همان روز</small></span>
+                <span class="choice__price">۸۰,۰۰۰ تومان</span>
+              </span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="ship">
+              <span class="choice__box">
+                <span class="choice__text"><strong>تحویل حضوری</strong><small>از فروشگاه آینیم در یزد</small></span>
+                <span class="choice__price">رایگان</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Payment -->
+        <fieldset class="block">
+          <legend class="block__title">روش پرداخت</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio" name="pay" checked>
+              <span class="choice__box"><img class="choice__logo" src="../assets/images/Zarin.png" alt="">
+                <span class="choice__text"><strong>پرداخت آنلاین</strong><small>درگاه امن زرین‌پال</small></span>
+                <span class="choice__price"></span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span class="field__label">توضیحات سفارش (اختیاری)</span>
+          <textarea class="field__input" rows="2"></textarea>
+        </label>
+      </form>
+
+      <!-- Summary -->
+      <aside class="summary" aria-label="خلاصه سفارش">
+        <h2 class="summary__title">سفارش شما</h2>
+
+        <ul class="mini">
+          <li class="mini__item">
+            <img src="../assets/images/011.jpg" alt="">
+            <span class="mini__title">ست تیشرت و شلوارک مردانه هایکا</span>
+            <span class="mini__qty">× ۱</span>
+          </li>
+          <li class="mini__item">
+            <img src="../assets/images/013.jpg" alt="">
+            <span class="mini__title">شمیز زنانه درسا</span>
+            <span class="mini__qty">× ۲</span>
+          </li>
+          <li class="mini__item">
+            <img src="../assets/images/018.jpg" alt="">
+            <span class="mini__title">سوییشرت پنبه ای دورس مردانه</span>
+            <span class="mini__qty">× ۱</span>
+          </li>
+        </ul>
+
+        <dl class="summary__list">
+          <div><dt>قیمت کالاها</dt><dd>۳,۵۵۸,۰۰۰ تومان</dd></div>
+          <div class="summary__discount"><dt>تخفیف</dt><dd>۴۶۹,۰۰۰ تومان</dd></div>
+          <div><dt>هزینه ارسال</dt><dd>رایگان</dd></div>
+          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd>۳,۰۸۹,۰۰۰ تومان</dd></div>
+        </dl>
+
+        <button class="btn btn--primary summary__pay" form="checkout-form">پرداخت و ثبت سفارش</button>
+        <a href="cart.html" class="summary__back">بازگشت به سبد خرید</a>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <form class="container newsletter__form">
+      <h2 class="newsletter__title">دریافت خبر از آینیم</h2>
+      <input class="newsletter__input" type="email" placeholder="ایمیل خود را وارد کنید" required>
+      <button class="btn btn--success">ارسال</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <img src="../assets/images/aynim-high-resolution-logo.png" alt="Aynim" class="footer__logo">
+        <p>به فروشگاه آنلاین آینیم خوش آمدید. در فروشگاه ما انواع لباس و کیف و کفش مردانه و زنانه موجود می باشد لطفا از محصولات ما دیدن نمایید.</p>
+        <p>برای دریافت اطلاعات فروشگاه به پیج اینستاگرام فروشگاه به آدرس زیر مراجعه کنید</p>
+        <a href="#" class="footer__social"><img class="footer__social-icon" src="../assets/icons/Insta.svg" alt="">AYNIM</a>
+      </div>
+
+      <nav class="footer__col">
+        <h3>لینک های کاربردی</h3>
+        <ul class="footer__links">
+          <li><a href="../index.html"><i class="ri-arrow-left-s-line"></i> خانه</a></li>
+          <li><a href="shop.html"><i class="ri-arrow-left-s-line"></i> همه محصولات</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> لباس مردانه</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> لباس زنانه</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h3>تماس با ما</h3>
+        <ul class="contact">
+          <li><img src="../assets/icons/phone.svg" alt=""><a href="tel:09017766405">۰۹۰۱۷۷۶۶۴۰۵</a></li>
+          <li><img src="../assets/icons/email.svg" alt=""><a href="mailto:aynim@gmail.com">aynim@gmail.com</a></li>
+          <li><img src="../assets/icons/map.svg" alt="">یزد - فروشگاه آینیم</li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3>نماد ها</h3>
+        <div class="trust">
+          <a href="https://www.zarinpal.com" target="_blank" rel="noopener"><img src="../assets/images/Zarin.png" alt="زرین پال"></a>
+          <a href="https://enamad.ir" target="_blank" rel="noopener"><img src="../assets/images/ENAMADpng.parspng.com_.png" alt="اینماد"></a>
+        </div>
+      </div>
+
+      <nav class="footer__col">
+        <h3>راهنمای کاربر</h3>
+        <ul class="footer__links">
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> نحوه ساخت حساب</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> نحوه ثبت سفارش</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> ثبت شکایت</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col">
+        <h3>سوالات متداول</h3>
+        <ul class="footer__links">
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> چگونه کد تخفیف هارو داشته باشم؟</a></li>
+          <li><a href="#"><i class="ri-arrow-left-s-line"></i> محصول کی به دستم می رسه؟</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
+  </footer>
+
+</body>
+</html>
