@@ -485,44 +485,6 @@
   gap: 1.25rem;
 }
 
-.kv {
-  margin-top: 0.75rem;
-}
-
-.kv div {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-block: 0.5rem;
-  font-size: 0.85rem;
-  border-bottom: 1px dashed var(--border);
-}
-
-.kv div:last-child {
-  border-bottom: 0;
-}
-
-.kv dt {
-  flex-shrink: 0;
-  color: var(--muted);
-}
-
-.kv dd {
-  text-align: left;
-}
-
-.kv__discount dd {
-  color: #e0245e;
-}
-
-.kv__total {
-  font-weight: 700;
-}
-
-.kv__total dd {
-  color: var(--primary);
-}
-
 @media (max-width: 850px) {
   .info {
     grid-template-columns: minmax(0, 1fr);
